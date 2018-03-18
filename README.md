@@ -18,6 +18,15 @@ $ composer require giaphiep/productcrud
 ```
 
 ## Usage
+
+Method 1: Run
+
+``` bash
+$ php artisan productcrud:install
+```
+
+Method 2:
+
 1. In configs/app.php file, add the following to the providers array (optional in version >= 5.5)
 ``` php
 GiapHiep\Productcrud\ProductcrudServiceProvider::class,
