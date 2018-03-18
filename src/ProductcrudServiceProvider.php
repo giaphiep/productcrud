@@ -4,6 +4,9 @@ namespace GiapHiep\Productcrud;
 
 use Illuminate\Support\ServiceProvider;
 
+use GiapHiep\Productcrud\Commands\ProductcrudInstall;
+
+
 class ProductcrudServiceProvider extends ServiceProvider
 {
     /**
@@ -32,6 +35,15 @@ class ProductcrudServiceProvider extends ServiceProvider
 
 
         $this->app->register(RouteServiceProvider::class);
+
+
+        //commands
+        if ($this->app->runningInConsole()) {
+	        $this->commands([
+	            ProductcrudInstall::class,
+	        ]);
+    	}
+
 
     }
 
